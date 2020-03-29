@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    background-color: #b0287a;
+    color: #ffffff;
+    padding-left: 185px;
+}
+
+.header__item {
+    margin-right: 50px;
+}
+
+.header__icon {
+    margin-right: 10px;
+}
