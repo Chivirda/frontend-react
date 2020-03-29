@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import './MainContent.css'
 import MainHeading from '../MainHeading/MainHeading'
+import Table from '../Table/Table'
 
-export class MainContent extends Component {
+const firstStepHeading = "1: Select Legal Entity"
+
+class MainContent extends Component {
     render() {
         return (
             <div className="content">
-                <MainHeading value="1: Select Legal Entity"/>
+                <MainHeading value={firstStepHeading} />
+                <Table />
             </div>
         )
     }
