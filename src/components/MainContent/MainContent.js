@@ -11,10 +11,25 @@ class MainContent extends Component {
         return (
             <div className="content">
                 <MainHeading value={firstStepHeading} />
-                <Table />
+                <Table 
+                    tableClickHandler={this.onTableClickHandler()}
+                />
                 <Button />
             </div>
         )
+    }
+
+    onTableClickHandler() {
+        const rows = document.querySelectorAll('.row')
+
+        for (let row of rows) {
+            row.onclick = function() {
+                for (let children of rows) {
+                    children.classList.remove('active')
+                }
+                this.classList.add('active')
+            }
+        }
     }
 }
 

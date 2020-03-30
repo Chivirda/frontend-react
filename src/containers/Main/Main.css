@@ -1,3 +1,8 @@
 .main-wrapper {
     display: flex;
 }
+
+.wrapper {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}

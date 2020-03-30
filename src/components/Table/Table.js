@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Table.css'
-import Axios from 'axios'
+import legalentity from '../../legalentity.json'
 
 class Table extends Component {
     state = {
@@ -9,10 +9,11 @@ class Table extends Component {
 
     async componentDidMount() {
         try {
-            const legalentity = await Axios.get('https://frontend-9edd3.firebaseio.com/legalentity.json')
+            console.log(legalentity);
+            
             const entities = []
 
-            for (let entity of legalentity.data) {
+            for (let entity of legalentity) {
                 entities.push({
                     id: entity.legalEntityID,
                     name: entity.legalEntityName,
@@ -29,13 +30,19 @@ class Table extends Component {
         } catch (e) {
             console.log(e)
         }
+
+        
     }
 
     renderTable() {
+
+        
+
         return this.state.entities.map(entity => {
             return (
                 <tr
                     key={entity.id}
+                    className="row"
                 >
                     <td>{entity.name}</td>
                     <td>{entity.address}</td>
@@ -44,7 +51,16 @@ class Table extends Component {
                 </tr>
             )
         })
+
         
+        
+    }
+
+    insertCheck() {
+        const tr = document.querySelectorAll('.row')
+        for (let row of tr) {
+            return row.insertAdjacentElement('afterbegin', '<i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp;')
+        }
     }
     
     
@@ -61,6 +77,7 @@ class Table extends Component {
                 </thead>
                 <tbody>
                     {this.renderTable()}
+                    {this.insertCheck()}
                 </tbody>
             </table>
         )

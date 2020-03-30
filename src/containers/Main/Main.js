@@ -7,7 +7,7 @@ import MainContent from '../../components/MainContent/MainContent'
 export class Main extends Component {
     render() {
         return (
-            <div>
+            <div className="wrapper">
                 <Header />
                 <div className="main-wrapper">
                     <Navigations />
