@@ -35,15 +35,13 @@ class Table extends Component {
     }
 
     renderTable() {
-
-        
-
         return this.state.entities.map(entity => {
             return (
                 <tr
                     key={entity.id}
                     className="row"
                 >
+                    <td className="first-column"><i className="fa fa-check" aria-hidden="true"></i></td>
                     <td>{entity.name}</td>
                     <td>{entity.address}</td>
                     <td>{entity.city}</td>
@@ -51,24 +49,14 @@ class Table extends Component {
                 </tr>
             )
         })
-
-        
-        
     }
-
-    insertCheck() {
-        const tr = document.querySelectorAll('.row')
-        for (let row of tr) {
-            return row.insertAdjacentElement('afterbegin', '<i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;&nbsp;')
-        }
-    }
-    
     
     render() {
         return (
             <table>
                 <thead>
                     <tr>
+                        <td className="first-column"></td>
                         <td id="firstColumnName">Legal Entity</td>
                         <td>Street</td>
                         <td>City</td>
@@ -77,7 +65,6 @@ class Table extends Component {
                 </thead>
                 <tbody>
                     {this.renderTable()}
-                    {this.insertCheck()}
                 </tbody>
             </table>
         )

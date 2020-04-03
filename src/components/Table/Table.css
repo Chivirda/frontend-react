@@ -13,18 +13,6 @@ tr:nth-child(2n) {
     background: #f9f9f9;
 }
 
-td {
-    padding-left: 60px;
-}
-
-.row td:first-child {
-    padding-left: 44px;
-}
-
-.row.active td:first-child {
-    padding-left: 24px;
-}
-
 thead {
     background-color: #405f77;
     color: #ffffff;
@@ -41,4 +29,9 @@ thead {
 
 .row .fa-check {
     display: none;
+}
+
+.first-column {
+    width: 4%;
+    text-align: center;
 }
