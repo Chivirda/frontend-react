@@ -63,7 +63,9 @@ class Table extends Component {
                         <td>Country</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody 
+                    onClick={() => this.props.onTableClick()}
+                >
                     {this.renderTable()}
                 </tbody>
             </table>

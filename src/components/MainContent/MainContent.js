@@ -12,7 +12,7 @@ class MainContent extends Component {
             <div className="content">
                 <MainHeading value={firstStepHeading} />
                 <Table 
-                    tableClickHandler={this.onTableClickHandler}
+                    onTableClick={this.onTableClickHandler}
                 />
                 <Button />
             </div>
